@@ -6,7 +6,6 @@ import xgboost
 import getopt
 
 
-# 模型预测阈值
 site_model_threthold = 0.3
 msiscore_threthold = 0.2
 
