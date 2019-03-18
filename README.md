@@ -2,13 +2,13 @@ MSIsensor_t (MSIsensor for tumor only)
 ===========
 MSIsensor_t is a Python program to detect replication slippage variants at microsatellite regions, and differentiate them as somatic or germline. Given tumor only sequence data, it uses site models trainned by machine learning and figures out a somatic or germline value for a distribution per microsatellite. Our test results show that it's performance is comparable with paired tumor and normal sequence data input. And, We recommend to set 20% as an uniform msi score cutoff values for different cancer types. ( msi high: msi score >= 20%, msi low and mss: msi score <20% ). We also provide the test results of TCGA and EGA data and illustrate the performance comparison between original tumor/normal paired module and tumor only module.
         
-                      MSIsensor_AUC   MSIsensor_t_AUC 
-TCGA STAD&UCEC&CRC    ---             0.9919
-TCGA STAD             0.9999          0.9999      
-TCGA UCEC             0.9885          0.9933
-TCGA CRC              0.9814          0.9942
-EGA  STAD&COAD        1               1
-Chinese panel         0.9774          0.994
+                                MSIsensor_AUC   MSIsensor_t_AUC 
+        TCGA STAD&UCEC&CRC      ---             0.9919
+        TCGA STAD               0.9999          0.9999      
+        TCGA UCEC               0.9885          0.9933
+        TCGA CRC                0.9814          0.9942
+        EGA  STAD&COAD          1               1
+        Chinese panel           0.9774          0.994
 
 
 If you used this tool for your work, please cite [PMID 24371154](https://www.ncbi.nlm.nih.gov/pubmed/24371154)
