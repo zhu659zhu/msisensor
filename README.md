@@ -19,11 +19,10 @@ Prerequisite packages:
     apt-get install gcc g++ make zlib1g-dev libncurses5-dev libncursesw5-dev python python-pip
     pip install numpy scipy xgboost
 
-Build:
+Install:
 
     git clone https://github.com/zhu659zhu/msisensor.git
     cd msisensor
-    make
 
 Usage:
 

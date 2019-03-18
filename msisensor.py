@@ -100,9 +100,9 @@ if __name__ == '__main__':
             arg_dict[name[1:]] = value
         cmd = sys.argv[0][:-3] if sys.argv[0][:-3][0] == "/" else "./" + sys.argv[0][:-3]
         if not arg_dict.get("b", ""):
-            os.popen(cmd + " msi -d %s -t %s -o %s" % (arg_dict["d"],arg_dict["t"],arg_dict["o"]))
+            os.popen(cmd + " msi -d %s -t %s -o %s /dev/null 2>&1" % (arg_dict["d"],arg_dict["t"],arg_dict["o"]))
         else:
-            os.popen(cmd + " msi -d %s -t %s -o %s -b %s" % (arg_dict["d"],arg_dict["t"],arg_dict["o"],arg_dict["b"]))
+            os.popen(cmd + " msi -d %s -t %s -o %s -b %s /dev/null 2>&1" % (arg_dict["d"],arg_dict["t"],arg_dict["o"],arg_dict["b"]))
         mst = MSIPredict()
         mst.sample_predict(arg_dict["o"] + "_dis", arg_dict["d"], arg_dict["M"])
 
