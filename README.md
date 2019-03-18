@@ -21,7 +21,7 @@ Prerequisite packages:
 
 Build:
 
-    git clone https://github.com/ding-lab/msisensor.git
+    git clone https://github.com/zhu659zhu/msisensor.git
     cd msisensor
     make
 
