@@ -55,6 +55,6 @@ Contact
 -------
 If you have any questions, please contact one or more of the following folks:
 Beifang Niu <bniu@sccas.cn>
-Haidong Zhu <zhu@sccas.cn>
+Haidong Zhu <zhhd@sccas.cn>
 Li Ding <lding@wustl.edu>
 
