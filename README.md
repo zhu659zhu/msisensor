@@ -26,6 +26,7 @@ Install:
 
     git clone https://github.com/zhu659zhu/msisensor.git
     cd msisensor
+    chmod +x msisensor
 
 Usage:
 
