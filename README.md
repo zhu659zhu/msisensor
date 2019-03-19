@@ -1,6 +1,6 @@
 MSIsensor_t (MSIsensor for tumor only)
 ===========
-MSIsensor_t is a Python program to detect replication slippage variants at microsatellite regions, and differentiate them as somatic or germline. Given tumor only sequence data, it uses site models trainned by machine learning and figures out a somatic or germline value for a distribution per microsatellite. Our test results show that it's performance is comparable with paired tumor and normal sequence data input. And, We recommend to set 20% as an uniform msi score cutoff values for different cancer types. ( msi high: msi score >= 20%, msi low and mss: msi score <20% ). We also provide the test results of TCGA and EGA data and illustrate the performance comparison between original tumor/normal paired module and tumor only module.
+MSIsensor_t is a Python program to detect replication slippage variants at microsatellite regions, and differentiate them as somatic or germline. Given tumor only sequence data, it uses site models trainned by machine learning and figures out a somatic or germline value for a distribution per microsatellite. Our test results show that it's performance is comparable with paired tumor and normal sequence data input. And, We recommend to set 20% as an uniform msi score cutoff values for different cancer types, which is consistent with the msi score cutoff of Illumina TruSight Oncology 500 ( msi high: msi score >= 20%, msi low and mss: msi score <20% ). We also provide the test results of TCGA and EGA data and illustrate the performance comparison between original tumor/normal paired module and tumor only module. Currently, we just provide models based on build 38 reference. You can use liftover to transfer microsatellites to build 37 or others. 
         
                                 MSIsensor_AUC   MSIsensor_t_AUC 
         TCGA STAD&UCEC&CRC      ---             0.9919
@@ -55,4 +55,6 @@ Contact
 -------
 If you have any questions, please contact one or more of the following folks:
 Beifang Niu <bniu@sccas.cn>
+Haidong Zhu <zhu@sccas.cn>
 Li Ding <lding@wustl.edu>
+
