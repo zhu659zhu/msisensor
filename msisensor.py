@@ -110,6 +110,3 @@ if __name__ == '__main__':
         mst.sample_predict(arg_dict["o"] + "_dis", arg_dict["M"] + "/" + list_file, arg_dict["M"])
 
 
-
-
-
