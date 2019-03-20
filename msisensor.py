@@ -4,6 +4,7 @@ import os
 import sys
 import xgboost
 import getopt
+import hashlib
 
 
 site_model_threthold = 0.3
@@ -62,7 +63,9 @@ class MSIPredict(object):
         uns_num = 0
         for site, x_test in feature_dict.items():
             bst = xgboost.Booster()
-            bst.load_model(model_file + '/trainsites_xgb_%s.model' % site)
+            m2 = hashlib.md5()
+            m2.update(site)
+            bst.load_model(model_file + '/%s' % m2.hexdigest())
             dtest = xgboost.DMatrix(x_test)
             y_pred = bst.predict(dtest)
             if y_pred > site_model_threthold:
@@ -90,7 +93,7 @@ if __name__ == '__main__':
     if len(sys.argv) < 4 or sys.argv[1] != "msi":
         print "missing parameter..."
         print "Example:"
-        print "python " + sys.argv[0] + " msi -d microsatellites.txt  -t ./171104_E00495_HF5C2CCXY_cancer.dedupped.bam -o ./179001959F2D-179001959F1D_MSI-H_output -b 2 -M ./models/"
+        print "python " + sys.argv[0] + " msi -t ./171104_E00495_HF5C2CCXY_cancer.dedupped.bam -o ./179001959F2D-179001959F1D_MSI-H_output -b 2 -M ./models/"
         exit()
     else:
         opts,args = getopt.getopt(sys.argv[2:],'-d:t:o:b:M:',['msi'])
@@ -98,12 +101,13 @@ if __name__ == '__main__':
         for name, value in opts:
             arg_dict[name[1:]] = value
         cmd = sys.argv[0][:-3] if sys.argv[0][:-3][0] == "/" else "./" + sys.argv[0][:-3]
+        list_file = "1030c0aa35ca5c263daeae866ad18632"
         if not arg_dict.get("b", ""):
-            os.popen(cmd + " msi -d %s -t %s -o %s /dev/null 2>&1" % (arg_dict["d"],arg_dict["t"],arg_dict["o"]))
+            os.popen(cmd + " msi -d %s -t %s -o %s /dev/null 2>&1" % (arg_dict["M"] + "/" + list_file,arg_dict["t"],arg_dict["o"]))
         else:
-            os.popen(cmd + " msi -d %s -t %s -o %s -b %s /dev/null 2>&1" % (arg_dict["d"],arg_dict["t"],arg_dict["o"],arg_dict["b"]))
+            os.popen(cmd + " msi -d %s -t %s -o %s -b %s /dev/null 2>&1" % (arg_dict["M"] + "/" + list_file,arg_dict["t"],arg_dict["o"],arg_dict["b"]))
         mst = MSIPredict()
-        mst.sample_predict(arg_dict["o"] + "_dis", arg_dict["d"], arg_dict["M"])
+        mst.sample_predict(arg_dict["o"] + "_dis", arg_dict["M"] + "/" + list_file, arg_dict["M"])
 
 
 
