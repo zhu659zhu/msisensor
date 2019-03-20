@@ -34,7 +34,6 @@ Usage:
 
 Options:
 
-    -d   <string>   homopolymer and microsates file
     -t   <string>   tumor bam file
     -o   <string>   output distribution file
     -M   <string>   model folder
@@ -42,7 +41,7 @@ Options:
 
 Example:
 
-    python msisensor.py msi -d microsatellites.txt  -t ./171104_E00495_HF5C2CCXY_cancer.dedupped.bam -o ./179001959F2D-179001959F1D_MSI-H_output -b 2 -M ./models/
+    python msisensor.py msi -t ./171104_E00495_HF5C2CCXY_cancer.dedupped.bam -o ./179001959F2D-179001959F1D_MSI-H_output -M ./models/  -b 2
 
 Output:
 
