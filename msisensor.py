@@ -100,6 +100,12 @@ if __name__ == '__main__':
         arg_dict = {}
         for name, value in opts:
             arg_dict[name[1:]] = value
+        if not os.path.exists(arg_dict["t"]):
+            print "missing bam file..."
+            exit()
+        if not os.path.exists(arg_dict["t"] + ".bai"):
+            print "missing bam index file..."
+            exit()
         cmd = sys.argv[0][:-3] if sys.argv[0][:-3][0] == "/" else "./" + sys.argv[0][:-3]
         list_file = "1030c0aa35ca5c263daeae866ad18632"
         if not arg_dict.get("b", ""):
