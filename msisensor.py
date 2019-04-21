@@ -7,8 +7,8 @@ import getopt
 import hashlib
 
 
-site_model_threthold = 0.3
-msiscore_threthold = 0.2
+site_model_threshold = 0.3
+msiscore_threshold = 0.2
 
 rep_start = 1
 rep_end = 36
@@ -68,7 +68,7 @@ class MSIPredict(object):
             bst.load_model(model_file + '/%s' % m2.hexdigest())
             dtest = xgboost.DMatrix(x_test)
             y_pred = bst.predict(dtest)
-            if y_pred > site_model_threthold:
+            if y_pred > site_model_threshold:
                 uns_num += 1
             else:
                 sta_num += 1
@@ -77,7 +77,7 @@ class MSIPredict(object):
             print "MSI status error..."
             exit()
         msiscore = float(uns_num)/(sta_num + uns_num)
-        msi_status = "MSI" if float(uns_num)/(sta_num + uns_num) >= msiscore_threthold else "MSS"
+        msi_status = "MSI" if float(uns_num)/(sta_num + uns_num) >= msiscore_threshold else "MSS"
         print "Total sites: ", sta_num + uns_num
         print "somatic sites: ", uns_num
         print "MSI score: ", msiscore
