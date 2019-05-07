@@ -41,7 +41,7 @@ Options:
 
 Example:
 
-    python msisensor.py msi -t ./171104_E00495_HF5C2CCXY_cancer.dedupped.bam -o ./179001959F2D-179001959F1D_MSI-H_output -M ./models/  -b 2
+    python msisensor.py msi -t ./171104_E00495_HF5C2CCXY_cancer.dedupped.bam -o ./179001959F2D-179001959F1D_MSI-H_output -M ./models_b38/  -b 2
 
 Output:
 
