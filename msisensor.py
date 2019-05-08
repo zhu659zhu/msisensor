@@ -106,6 +106,12 @@ if __name__ == '__main__':
         if not os.path.exists(arg_dict["t"] + ".bai"):
             print "missing bam index file..."
             exit()
+        if arg_dict.get("M", "") == "":
+            print "missing model files..."
+            exit()
+        elif arg_dict.get("o", "") == "":
+            print "default file name..."
+            arg_dict["o"] = "tmp"
         cmd = sys.argv[0][:-3] if sys.argv[0][:-3][0] == "/" else "./" + sys.argv[0][:-3]
         list_file = "1030c0aa35ca5c263daeae866ad18632"
         if not arg_dict.get("b", ""):
