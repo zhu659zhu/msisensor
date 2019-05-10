@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+#----------------------------------
+# $Authors: Haidong Zhu & Beifang Niu
+# msisensor_t - microsatellite instability detection for tumor only data
+# $Date: Fri May 10 11:14:49 CST 2019 $
+# $Revision: 0.1 $
+# $URL: $
+#----------------------------------
+
 # coding: utf-8
 
 import os
@@ -5,7 +14,6 @@ import sys
 import xgboost
 import getopt
 import hashlib
-
 
 site_model_threshold = 0.3
 msiscore_threshold = 0.2
